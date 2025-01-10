@@ -16,44 +16,44 @@ void insertend(int item, struct node** head) {
     newnode->next = NULL;
 
     if (*head == NULL) {
-	*head = newnode;  // If list is empty, new node becomes the head
+	*head = newnode; 
     } else {
 	temp = *head;
 	while (temp->next != NULL) {
-	    temp = temp->next;  // Traverse to the last node
+	    temp = temp->next;  
 	}
-	temp->next = newnode;  // Link the last node to the new node
+	temp->next = newnode;  
     }
 }
 
-// Function to display the linked list
+
 void display(struct node* head) {
     if (head == NULL) {
 	printf("List Empty\n");
     } else {
 	temp = head;
 	while (temp != NULL) {
-	    printf("%d ", temp->data);  // Print the data of each node
-	    temp = temp->next;  // Move to the next node
+	    printf("%d ", temp->data); 
+	    temp = temp->next;  
         }
         printf("\n");
     }
 }
 
-// Function to concatenate two linked lists
+
 void concatenate(struct node** list1, struct node* list2) {
     if (*list1 == NULL) {
-        *list1 = list2;  // If list1 is empty, simply assign list2 to list1
+        *list1 = list2; 
     } else {
         temp = *list1;
         while (temp->next != NULL) {
-            temp = temp->next;  // Traverse to the last node of list1
+            temp = temp->next; 
         }
-        temp->next = list2;  // Link the last node of list1 to the head of list2
+        temp->next = list2; 
     }
 }
 
-// Main function
+
 void main() {
     int ch, x, c;
 
@@ -65,33 +65,33 @@ void main() {
             case 1:
                 printf("\nEnter the data to be inserted into List 1: ");
                 scanf("%d", &x);
-                insertend(x, &head1);  // Insert at the end of List 1
+                insertend(x, &head1);  
                 break;
             
             case 2:
                 printf("\nEnter the data to be inserted into List 2: ");
                 scanf("%d", &x);
-                insertend(x, &head2);  // Insert at the end of List 2
+                insertend(x, &head2); 
                 break;
             
             case 3:
                 printf("\nDisplaying List 1:\n");
-                display(head1);  // Display List 1
+                display(head1);  
                 break;
 
             case 4:
                 printf("\nDisplaying List 2:\n");
-                display(head2);  // Display List 2
+                display(head2);  
                 break;
 
             case 5:
                 printf("\nConcatenating List 2 into List 1\n");
-                concatenate(&head1, head2);  // Concatenate List 2 into List 1
+                concatenate(&head1, head2);  
                 printf("List 2 has been concatenated into List 1\n");
                 break;
 
             case 6:
-                exit(0);  // Exit the program
+                exit(0); 
                 break;
 
             default:
