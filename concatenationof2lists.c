@@ -8,7 +8,7 @@ struct node{
 
 struct node *head1 = NULL, *head2 = NULL, *temp;
 
-// Function to insert at the beginning of the linked list
+
 void insertbeg(int item, struct node** head) {
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     newnode->data = item;
@@ -16,7 +16,7 @@ void insertbeg(int item, struct node** head) {
     *head = newnode;
 }
 
-// Function to insert at the end of the linked list
+
 void insertend(int item, struct node** head) {
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     struct node *temp;
@@ -34,7 +34,7 @@ void insertend(int item, struct node** head) {
     }
 }
 
-// Function to display the linked list
+
 void display(struct node* head) {
     if (head == NULL) {
         printf("List Empty\n");
@@ -48,20 +48,20 @@ void display(struct node* head) {
     }
 }
 
-// Function to concatenate two linked lists
+
 void concatenate(struct node** list1, struct node* list2) {
     if (*list1 == NULL) {
-        *list1 = list2;  // If list1 is empty, simply assign list2 to list1
+        *list1 = list2;  
     } else {
         temp = *list1;
         while (temp->next != NULL) {
-            temp = temp->next;  // Traverse to the last node of list1
+            temp = temp->next; 
         }
-        temp->next = list2;  // Link the last node of list1 to the head of list2
+        temp->next = list2;
     }
 }
 
-// Main function
+
 void main() {
     int ch, c, x, position, s;
 
